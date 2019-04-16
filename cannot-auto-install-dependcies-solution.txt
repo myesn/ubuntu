@@ -1,0 +1,7 @@
+https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa
+
+
+
+Then make sure that the restricted and universe repositories are enabled.
+Hit Alt+F2,
+type software-properties-gtk and hit Enter.

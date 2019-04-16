@@ -1,0 +1,10 @@
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04
+
+config file
+/etc/mongod.conf
+
+service mongod start
+service mongod restart
+service mongod stop

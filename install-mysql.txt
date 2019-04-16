@@ -1,0 +1,13 @@
+https://www.cnblogs.com/boshen-hzb/p/5889633.html
+
+nano /etc/mysql/my.cnf
+bind-address = 127.0.0.1 //找到此内容并且注释
+
+
+Q：is not arrowed to connect to this MySQL server
+A：
+https://www.cnblogs.com/xyzdw/archive/2011/08/11/2135227.html
+
+root账号允许所有主机连接
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'P@ssw0rd' WITH GRANT OPTION;
+FLUSH   PRIVILEGES;

@@ -1,0 +1,6 @@
+ git init
+ git remote add origin https://myesn@bitbucket.org/myesn/7000.git
+ git add --all
+ git commit -m "initial"
+ git pull origin master --allow-unrelated-histories
+ git push -u origin --all

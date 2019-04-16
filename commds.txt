@@ -1,0 +1,104 @@
+修改密码
+sudo passwd [username]
+
+ssh root 不能登录
+1. vi /etc/ssh/sshd_config
+2. 找到PermitRootLogin no一行，改为PermitRootLogin yes
+3. service ssh restart
+
+清空文件
+ehco "" > filename
+
+
+修改 apt-get 源地址
+
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+vim /etc/apt/sources.list
+
+加入如下内容（中科大的）：
+
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise-updates main restricted
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise-updates main restricted
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise universe
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise-updates universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise-updates universe
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise-updates multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise-updates multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse
+
+deb http://security.ubuntu.com/ubuntu precise-security main restricted
+deb-src http://security.ubuntu.com/ubuntu precise-security main restricted
+deb http://security.ubuntu.com/ubuntu precise-security universe
+deb-src http://security.ubuntu.com/ubuntu precise-security universe
+deb http://security.ubuntu.com/ubuntu precise-security multiverse
+deb-src http://security.ubuntu.com/ubuntu precise-security multiverse
+
+
+
+搜狐源：
+deb http://mirrors.sohu.com/ubuntu/ precise-updates main restricted
+deb-src http://mirrors.sohu.com/ubuntu/ precise-updates main restricted
+deb http://mirrors.sohu.com/ubuntu/ precise universe
+deb-src http://mirrors.sohu.com/ubuntu/ precise universe
+deb http://mirrors.sohu.com/ubuntu/ precise-updates universe
+deb-src http://mirrors.sohu.com/ubuntu/ precise-updates universe
+deb http://mirrors.sohu.com/ubuntu/ precise multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ precise multiverse
+deb http://mirrors.sohu.com/ubuntu/ precise-updates multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ precise-updates multiverse
+deb http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse
+
+网易源：
+
+deb http://mirrors.163.com/ubuntu/ precise-updates main restricted
+deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted
+deb http://mirrors.163.com/ubuntu/ precise universe
+deb-src http://mirrors.163.com/ubuntu/ precise universe
+deb http://mirrors.163.com/ubuntu/ precise-updates universe
+deb-src http://mirrors.163.com/ubuntu/ precise-updates universe
+deb http://mirrors.163.com/ubuntu/ precise multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise multiverse
+deb http://mirrors.163.com/ubuntu/ precise-updates multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-updates multiverse
+deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+
+sudo apt-get update
+sudo apt-get upgrade
+
+
+
+查看依赖安装某个包需要安装哪些依赖
+apt-cache depends dotnet-sdk-2.1.4 | grep Depends
+
+安装 dotnet core 依赖包
+apt-get install libunwind8 liblttng-ust0 libcurl3 libssl1.0.0 libuuid1 libkrb5 zlib1g libicu52 libicu55 libicu57
+
+apt-get upgrade 中断后再次更新报错
+sudo rm /var/lib/dpkg/updates/*
+sudo apt-get update
+sudo apt-get upgrade
+
+
+解压
+tar –xvf file.tar //解压 tar包
+tar -xzvf file.tar.gz //解压tar.gz
+tar -xjvf file.tar.bz2   //解压 tar.bz2
+tar –xZvf file.tar.Z   //解压tar.Z
+unrar e file.rar //解压rar
+unzip file.zip //解压zip
+
+(1)、*.tar 用 tar –xvf 解压
+(2)、*.gz 用 gzip -d或者gunzip 解压
+(3)、*.tar.gz和*.tgz 用 tar –xzf 解压
+(4)、*.bz2 用 bzip2 -d或者用bunzip2 解压
+(5)、*.tar.bz2用tar –xjf 解压
+(6)、*.Z 用 uncompress 解压
+(7)、*.tar.Z 用tar –xZf 解压
+(8)、*.rar 用 unrar e解压
+(9)、*.zip 用 unzip 解压

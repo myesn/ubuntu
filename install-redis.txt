@@ -1,0 +1,12 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
+
+
+https://github.com/antirez/redis/issues/1417
+不直接使用make test测试，而是使用下面的command
+taskset -c 1 make test
+
+
+
+sudo systemctl start redis
+sudo systemctl status redis
+sudo systemctl restart redis
